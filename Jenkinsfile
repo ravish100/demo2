@@ -16,6 +16,7 @@ pipeline {
         } 
          stage('Run') {
             steps {
+               bat 'cd C:\Users\Administrator\.jenkins\workspace\Anand1\target'
                bat 'java -jar demo-0.0.1-SNAPSHOT.jar'
             }
         } 
