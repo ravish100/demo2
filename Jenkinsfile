@@ -16,7 +16,7 @@ pipeline {
         } 
          stage('Run') {
             steps {
-                cd  "C:/var/lib/jenkins/workspace/Anand Pipeline1/target"
+                cd  "/var/lib/jenkins/workspace/Anand Pipeline1/target"
                sh 'java -jar demo-0.0.1-SNAPSHOT.jar'
                 
             }
