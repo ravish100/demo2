@@ -5,6 +5,12 @@ pipeline {
     }
     stages {
         
+        stage('Delete DIR') {
+            steps {
+              deleteDir()
+            }
+        }
+        
         stage('Clean and Install') {
             steps {
                sh 'mvn clean install'
