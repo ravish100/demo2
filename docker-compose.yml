@@ -14,7 +14,7 @@ server:
     image: mysql:8.0.17
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER:root
+      MYSQL_USER:admin
       MYSQL_PASSWORD:root
       MYSQL_DATABASE: test1
     restart: always
