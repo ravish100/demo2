@@ -1,24 +1,15 @@
 pipeline {
     agent any
-    options {
-        skipDefaultCheckout()
-    }
+    
     tools {
         maven "maven-3.8.6"
     }
     stages {
         
-        stage('Delete DIR') {
-            steps {
-              sh "git clean -x -f"
-        
-            }
-        }
-        
+                
         stage('Clean and Install') {
             steps {
-                cleanWs()
-               sh 'mvn clean install'
+                 sh 'mvn clean install'
             }
         }
         stage('Package') {
