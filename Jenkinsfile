@@ -4,6 +4,12 @@ pipeline {
         maven "maven-3.8.6"
     }
     stages {
+        stage('Git') {
+            steps {
+                step([$class: 'WsCleanup'])
+                checkout scm
+            }
+        }
         stage('Clean and Install') {
             steps {
                sh 'mvn clean install'
