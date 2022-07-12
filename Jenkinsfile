@@ -7,9 +7,8 @@ pipeline {
         
         stage('Delete DIR') {
             steps {
-              always { 
-            cleanWs()
-        }
+              sh "git clean -x -f"
+        
             }
         }
         
