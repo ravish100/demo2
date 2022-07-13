@@ -16,6 +16,12 @@ pipeline {
                sh 'mvn package'
             }
         } 
-        
+         stage('Run') {
+            steps {
+                dir ("/var/lib/jenkins/workspace/cloned/target"){
+               sh 'java -jar demo-0.0.1-SNAPSHOT.jar'
+                }
+            }
+         }
     }
 }
