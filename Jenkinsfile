@@ -3,10 +3,9 @@ pipeline {
     
     tools {
         maven "maven-3.8.6"
-    }
+          }
     stages {
-        
-                
+           
         stage('Clean and Install') {
             steps {
                  sh 'mvn clean install'
@@ -19,10 +18,10 @@ pipeline {
         } 
          stage('Run') {
             steps {
-                cd  "/var/lib/jenkins/workspace/cloned/target"
-               sh 'java -jar demo-0.0.1-SNAPSHOT.jar'
-                
+                dir ("C:\\Users\\Administrator\\.jenkins\\workspace\\Anand1\\target"){
+               bat 'java -jar demo-0.0.1-SNAPSHOT.jar'
+                }
             }
-        } 
+         }
     }
 }
