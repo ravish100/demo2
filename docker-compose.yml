@@ -17,6 +17,7 @@ server:
   mysqldb:
   container_name: mysqldb
     image: mysql:8.0.17
+    hostname: mysqldb
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER:admin
