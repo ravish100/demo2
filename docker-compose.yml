@@ -13,12 +13,14 @@ server:
       - mysql
 
   mysqldb:
+  container_name: mysqldb
     image: mysql:8.0.17
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER:admin
       MYSQL_PASSWORD:root
       MYSQL_DATABASE: test1
+      MYSQL_ROOT_HOST: '%'
     restart: always
     ports:
       - "3308:3306"
