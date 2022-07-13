@@ -9,6 +9,8 @@ server:
       - "8080:8080"
    depends_on:
     - mysqldb
+    networks:
+      - mysql
 
   mysqldb:
     image: mysql:8.0.17
@@ -20,3 +22,8 @@ server:
     restart: always
     ports:
       - "3308:3306"
+      networks:
+      - mysql
+      
+      networks:
+      mysql:
