@@ -16,9 +16,9 @@ pipeline {
                sh 'mvn package'
             }
         } 
-        stage('Dcoker Build') {
+        stage('Docker Build') {
             steps {
-                docker build ravish/dockerapp1.jar .
+                docker build -t ravish100/dockerapp1.jar .
             }
         } 
         
