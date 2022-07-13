@@ -19,7 +19,7 @@ pipeline {
          stage('Run') {
             steps {
                 dir ("/var/lib/jenkins/workspace/cloned/target"){
-               bat 'java -jar demo-0.0.1-SNAPSHOT.jar'
+               sh 'java -jar demo-0.0.1-SNAPSHOT.jar'
                 }
             }
          }
