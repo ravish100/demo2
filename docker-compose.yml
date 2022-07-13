@@ -8,7 +8,7 @@ server:
    ports:
       - "8080:8080"
    depends_on:
-    -mysqldb
+    - mysqldb
 
   mysqldb:
     image: mysql:8.0.17
