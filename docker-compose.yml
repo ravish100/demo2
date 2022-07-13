@@ -20,7 +20,7 @@ server:
     hostname: mysqldb
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER:admin
+      MYSQL_USER:root
       MYSQL_PASSWORD:root
       MYSQL_DATABASE: test1
       MYSQL_ROOT_HOST: '%'
