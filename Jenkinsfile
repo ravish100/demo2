@@ -22,8 +22,7 @@ pipeline {
         
         stage('Docker Build') {
             steps {
-                docker build -t 'ravish100/dockerapp1' .
-            }
+                docker build -t 'ravish100/dockerapp1' . }
         } 
         
          
