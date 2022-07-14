@@ -22,7 +22,7 @@ pipeline {
         
         stage('Docker Build') {
             steps {
-                docker build -t ravish100/dockerapp1 .
+                docker build -t 'ravish100/dockerapp1' .
             }
         } 
         
@@ -31,7 +31,7 @@ pipeline {
          stage('Docker Run') {
             steps {
                 dir ("/var/lib/jenkins/workspace/docker1/target"){
-               docker run  --name myapp1 --network mysql -d -p 8081:8080 ravish100/dockerapp1
+               docker run  --name myapp1 --network mysql -d -p '8081:8080' 'ravish100/dockerapp1'
                 }
             }
          }
