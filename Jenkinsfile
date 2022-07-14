@@ -16,7 +16,7 @@ pipeline {
         
         stage('MYSQL RUN') {
             steps {
-                docker run --name mysqldb --network mysql  -p '3306:3306' -e MYSQL_DATABASE=test1 -d 'mysql:8.0.17'
+                docker run --name mysqldb --network mysql  -p '3306:3306'  -d 'mysql:8.0.17'
             }
         } 
         
