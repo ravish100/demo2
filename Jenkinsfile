@@ -11,34 +11,33 @@ pipeline {
                  sh 'mvn clean install'
             }
         }
-        stage('Package') {
+        
+        
+        
+        stage('MYSQL RUN') {
             steps {
-               sh 'mvn package'
-            }
-        } 
-        stage('Docker Build') {
-            steps {
-                docker build -t ravish100/dockerapp1.jar .
+                docker run --name mysqldb --network mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -e MYSQL_DATABASE=test1 -d mysql:8.0.17
             }
         } 
         
+        stage('Docker Build') {
+            steps {
+                docker build -t ravish100/dockerapp1 .
+            }
+        } 
+        
+         
         
          stage('Docker Run') {
             steps {
                 dir ("/var/lib/jenkins/workspace/docker1/target"){
-               docker run -d -p 8081:8080 ravish/dockerapp1.jar
+               docker run  --name myapp1 --network mysql -d -p 8081:8080 ravish100/dockerapp1
                 }
             }
          }
         
         
         
-        stage('push') {
-        docker.withRegistry('https://registry.mycompany.com:8100',
-                            'jenkins-registry-credential-id') {
-            image.push()
-        }
-    }
         
     }
 }
